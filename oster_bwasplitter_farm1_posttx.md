@@ -11,13 +11,12 @@
 ```bash 
 
 #!/bin/bash -l
+```
 
-## SLURM Settings 
+### SLURM Settings 
+- The lines starting with #SBATCH set various parameters for the SLURM job scheduler:
 
----
-> These lines set various parameters for the SLURM job scheduler, which is used to manage and schedule computational tasks on clusters:
-
-############# SLURM SETTINGS #############
+```
 #SBATCH --account=project0005         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
 #SBATCH --job-name=bwasplitter        # some descriptive job name of your choice
 #SBATCH --output=%x-%J.out            # output file name will contain job name  + job ID
@@ -27,14 +26,22 @@
 #SBATCH --ntasks=1                    # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
 #SBATCH --cpus-per-task=1             # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1           # number of tasks to be launched on each allocated node
+```
 
-############# LOADING MODULES #############
-
+### Loading modules 
+- Loads the necessary module (miniforge) and activates the Conda environment (bwa_splitter).
+```
 module load apps/miniforge
 conda activate bwa_splitter
+```
+### Code section 
 
-############# MY CODE #############
+- Setting Variables: Defines sample name, reference genome, and input read files.
+- Checking for Existing Run: If the output directory for the sample already exists, it exits with a message.
+- Creating Directories: Creates necessary output directories.
+- Preparing Reference and Splitting Data: The exact details of the preparation steps are not fully shown.
 
+```
 sample_name=farm_1_posttx
 reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1_nxOstOste4.1_genomic.fna
 read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.fastq.gz
@@ -53,6 +60,9 @@ mkdir logfiles
 
 # prepare reference and split data
 echo -e "#!/bin/bash -l
+```
+
+
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                     # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
