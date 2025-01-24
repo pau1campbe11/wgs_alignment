@@ -1,5 +1,13 @@
 # oster_bwasplitter_farm1_posttx
 
+### author: Paul Campbell, p.campbell.5@research.gla.ac.uk; Jenni McIntyre, jenni
+
+## Overall aims 
+- to identify regions of the genome containg genes associated with drug treatment response, and hopefuly reaveal drug treatment specific QTLs 
+
+
+
+```bash 
 ## Shebang 
 
 #!/bin/bash -l
