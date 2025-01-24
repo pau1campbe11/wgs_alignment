@@ -1,6 +1,6 @@
 # Ostertagia ostertagia genome-wide analysis 
 
-### author: Paul Campbell, p.campbell.5@research.gla.ac.uk; Jenni McIntyre, jenni
+### authors: Paul Campbell, p.campbell.5@research.gla.ac.uk; Jenni McIntyre, jennifer.mcintyre@glasgow.ac.uk
 
 ## Overall aims 
 - to identify regions of the genome containg genes associated with drug treatment response, and hopefuly reaveal drug treatment specific QTLs 
@@ -14,7 +14,7 @@
 ```
 
 ### SLURM Settings 
-- The lines starting with #SBATCH set various parameters for the SLURM job scheduler:
+- The lines starting with #SBATCH set various parameters for the SLURM job scheduler
 
 ```
 #SBATCH --account=project0005         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -64,7 +64,9 @@ echo -e "#!/bin/bash -l
 
 
 
-############# SLURM SETTINGS #############
+### SLURM SETTINGS 
+
+```
 #SBATCH --account=project0005                     # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
 #SBATCH --job-name=bwasplitter_${sample_name}     # some descriptive job name of your choice
 #SBATCH --output=%x-%J.out                        # output file name will contain job name + job ID
@@ -74,38 +76,54 @@ echo -e "#!/bin/bash -l
 #SBATCH --ntasks=1                                # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
 #SBATCH --cpus-per-task=1                         # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1                       # number of tasks to be launched on each allocated node
+```
 
-############# LOADING MODULES #############
-
+### LOADING MODULES 
+```
 module load apps/miniforge
 conda activate bwa_splitter
+```
+### CODE SECTION
+- prepare reference and split the raw data
 
-############# MY CODE #############
-# prepare reference and split the raw data
-
+1. VARIABLES
+```
 sample_name=${sample_name}
 reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1_nxOstOste4.1_genomic.fna
 read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.fastq.gz
 read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.fastq.gz
+```
 
+2. SYMBOLIC LINKS & INDEXING
+```
 ln -sf $"{reference}" ref.fa
 bwa index -b 100000000 ref.fa
+```
 
+3. CHECK & SPLIT READ1
+- 8,000,000 reads
+```
 if [[ $read1 =~ \.gz$ ]]
 then ln -sf $"{read1}" R1.fq.gz; zcat R1.fq.gz | split -d -a 3 -l 8000000 - R1_tmp_
 else ln -sf $"{read1}" R1.fq; split -d -a 3 -l 8000000 R1.fq R1_tmp_
 fi
+```
 
-
+4. CHECK & SPLIT READ2
+- N.B. 8,000,000 reads
+```
 if [[ $read2 =~ \.gz$ ]]
 then ln -sf $"{read2}" R2.fq.gz; zcat R2.fq.gz | split -d -a 3 -l 8000000 - R2_tmp_
 else ln -sf $"{read2}" R2.fq; split -d -a 3 -l 8000000 R2.fq R2_tmp_
 fi
+```
 
-
+5. MARK STEP AS FINISHED
+- Creates a script file named step1_bwasplitter to indicate that step 1 is finished and makes it executable.
+```
 touch step1_FINISHED" > step1_bwasplitter
 chmod a+x step1_bwasplitter
-
+```
 
 # Write a script then Align reads: 
 echo -e "#!/bin/bash -l
