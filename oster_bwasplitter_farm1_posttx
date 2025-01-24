@@ -1,4 +1,13 @@
+# oster_bwasplitter_farm1_posttx
+
+## Shebang 
+
 #!/bin/bash -l
+
+## SLURM Settings 
+
+---
+> These lines set various parameters for the SLURM job scheduler, which is used to manage and schedule computational tasks on clusters:
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
