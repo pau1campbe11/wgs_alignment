@@ -1,4 +1,4 @@
-# <iOstertagia ostertagia> genome-wide analysis 
+# Ostertagia ostertagia genome-wide analysis 
 
 ### author: Paul Campbell, p.campbell.5@research.gla.ac.uk; Jenni McIntyre, jenni
 
