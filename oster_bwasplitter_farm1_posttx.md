@@ -5,8 +5,8 @@
 ## Overall aims 
 - to identify regions of the genome containg genes associated with drug treatment response, and hopefuly reaveal drug treatment specific QTLs 
 
-
-# Shebang 
+## Script
+### Shebang 
 - Indicates that the script should be executed in the bash shell. 
 ```bash 
 
