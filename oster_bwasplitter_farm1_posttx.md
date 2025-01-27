@@ -28,19 +28,18 @@
 #SBATCH --ntasks-per-node=1           # number of tasks to be launched on each allocated node
 ```
 
-### Loading modules 
+### Load modules 
 - Loads the necessary module (miniforge) and activates the Conda environment (bwa_splitter).
 ```
 module load apps/miniforge
 conda activate bwa_splitter
 ```
-### Code section 
 
+### Code section 
 - Setting Variables: Defines sample name, reference genome, and input read files.
 - Checking for Existing Run: If the output directory for the sample already exists, it exits with a message.
 - Creating Directories: Creates necessary output directories.
 - Preparing Reference and Splitting Data: The exact details of the preparation steps are not fully shown.
-
 ```
 sample_name=farm_1_posttx
 reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1_nxOstOste4.1_genomic.fna
@@ -62,7 +61,6 @@ echo -e "#!/bin/bash -l
 
 
 ### SLURM SETTINGS 
-
 ```
 #SBATCH --account=project0005                     # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
 #SBATCH --job-name=bwasplitter_${sample_name}     # some descriptive job name of your choice
@@ -75,11 +73,12 @@ echo -e "#!/bin/bash -l
 #SBATCH --ntasks-per-node=1                       # number of tasks to be launched on each allocated node
 ```
 
-### LOADING MODULES 
+### LOAD MODULES 
 ```
 module load apps/miniforge
 conda activate bwa_splitter
 ```
+
 ### CODE SECTION
 - prepare reference and split the raw data
 
