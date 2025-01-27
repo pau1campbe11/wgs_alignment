@@ -47,8 +47,6 @@ reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1
 read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.fastq.gz
 read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.fastq.gz
 
-#
-
 if [ -d "${sample_name}_bwasplitter_out" ]; then
         echo -e "\nThere is already a run started with this sample name. Rename and start again\n"
     exit 0
@@ -58,7 +56,6 @@ mkdir ${sample_name}_bwasplitter_out
 cd ${sample_name}_bwasplitter_out
 mkdir logfiles
 
-# prepare reference and split data
 echo -e "#!/bin/bash -l
 ```
 
@@ -101,7 +98,7 @@ bwa index -b 100000000 ref.fa
 ```
 
 3. CHECK & SPLIT READ1
-- 8,000,000 reads
+- N.B. 8,000,000 reads
 ```
 if [[ $read1 =~ \.gz$ ]]
 then ln -sf $"{read1}" R1.fq.gz; zcat R1.fq.gz | split -d -a 3 -l 8000000 - R1_tmp_
@@ -142,6 +139,7 @@ echo -e "#!/bin/bash -l
 #SBATCH --cpus-per-task=1                             # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1                           # number of tasks to be launched on each allocated node
 ```
+
 ### LOAD MODULES 
 ```
 module load apps/miniforge
@@ -242,7 +240,7 @@ echo -e \"#!/bin/bash -l
 #SBATCH --array=10-99                                 # create job array of 10 tasks numbered 1 through 10
 ```
 
-### LOADING MODULES
+### LOAD MODULES
 ```
 module load apps/miniforge
 conda activate bwa_splitter
