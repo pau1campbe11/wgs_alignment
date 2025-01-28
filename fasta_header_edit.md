@@ -1,5 +1,11 @@
-#!/bin/bash -l
+# 1. Remove section from Fasta header
 
+## Shebang 
+```
+#!/bin/bash -l
+```
+## SLURM Settings
+```
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
 #SBATCH --job-name=header_edit        # some descriptive job name of your choice
@@ -10,6 +16,9 @@
 #SBATCH --ntasks=1                    # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
 #SBATCH --cpus-per-task=1             # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1           # number of tasks to be launched on each allocated node
+```
 
-
+## Code section 
+```
   for i in farm_*R[1-2]_001.fastq.gz ; do zcat $i | sed 's/1:N:0/BC:Z/g' | sed 's/2:N:0/BC:Z/g' > ${i}_renamed.gz ; done
+```
