@@ -13,26 +13,26 @@
 
 ### Code section 
 
-zip  farm_1_posttx_R1_001_renamed.fastq.gz farm_1_posttx_R1_001.fastq.gz_renamed 
+gzip  farm_1_posttx_R1_001.fastq.gz_renamed 
 
-zip  farm_1_posttx_R2_001_renamed.fastq.gz farm_1_posttx_R2_002.fastq.gz_renamed 
+gzip   farm_1_posttx_R2_002.fastq.gz_renamed 
 
-zip  farm_1_pretx_R1_001_renamed.fastq.gz farm_1_pretx_R1_001.fastq.gz_renamed 
+gzip   farm_1_pretx_R1_001.fastq.gz_renamed 
 
-zip  farm_1_pretx_R2_001_renamed.fastq.gz farm_1_pretx_R2_001.fastq.gz_renamed 
+gzip   farm_1_pretx_R2_001.fastq.gz_renamed 
 
-zip  farm_2_posttx_R1_001_renamed.fastq.gz farm_2_posttx_R1_001.fastq.gz_renamed 
+gzip   farm_2_posttx_R1_001.fastq.gz_renamed 
 
-zip  farm_2_posttx_R2_001_renamed.fastq.gz farm_2_posttx_R2_001.fastq.gz_renamed 
+gzip   farm_2_posttx_R2_001.fastq.gz_renamed 
 
-zip  farm_2_pretx_R1_001_renamed.fastq.gz farm_2_pretx_R1_001.fastq.gz_renamed 
+gzip   farm_2_pretx_R1_001.fastq.gz_renamed 
 
-zip  farm_2_pretx_R2_001_renamed.fastq.gz farm_2_pretx_R2_001.fastq.gz_renamed 
+gzip   farm_2_pretx_R2_001.fastq.gz_renamed 
 
-zip  farm_3_posttx_R1_001_renamed.fastq.gz farm_3_posttx_R1_001.fastq.gz_renamed 
+gzip   farm_3_posttx_R1_001.fastq.gz_renamed 
 
-zip  farm_3_posttx_R2_001_renamed.fastq.gz farm_3_posttx_R2_002.fastq.gz_renamed 
+gzip   farm_3_posttx_R2_002.fastq.gz_renamed 
 
-zip  farm_3_pretx_R1_001_renamed.fastq.gz farm_3_pretx_R1_001.fastq.gz_renamed 
+gzip   farm_3_pretx_R1_001.fastq.gz_renamed 
 
-zip  farm_3_pretx_R2_001_renamed.fastq.gz farm_3_pretx_R2_001.fastq.gz_renamed 
+gzip   farm_3_pretx_R2_001.fastq.gz_renamed 
