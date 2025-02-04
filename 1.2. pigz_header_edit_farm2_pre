@@ -2,7 +2,7 @@
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
-#SBATCH --job-name=header_edit_zip    # some descriptive job name of your choice
+#SBATCH --job-name=header_edit_zip_f2pre    # some descriptive job name of your choice
 #SBATCH --output=%x-%J.out            # output file name will contain job name  + job ID
 #SBATCH --error=%x-%J.err             # error file name will contain job name  + job ID
 #SBATCH --time=0-20:00:00             # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
