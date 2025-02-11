@@ -20,8 +20,8 @@ conda activate bwa_splitter
 
 sample_name=farm_2_pretx
 reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1_nxOstOste4.1_genomic.fna
-read1=/users/2320707c/project0005/for_paul_oster/farm_2_pretx_R1_001.fastq.gz
-read2=/users/2320707c/project0005/for_paul_oster/farm_2_pretx_R2_001.fastq.gz
+read1=/users/2320707c/project0005/for_paul_oster/farm_2_pretx_R1_001.renamed_fastq.gz
+read2=/users/2320707c/project0005/for_paul_oster/farm_2_pretx_R2_001.renamed_fastq.gz
 
 #
 
