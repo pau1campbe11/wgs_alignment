@@ -25,7 +25,7 @@ read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.renamed_fa
 #
 
 if [ -d "${sample_name}_bwasplitter_out" ]; then
-        echo -e "\nThere is already a run started with this sample name. Rename and start again\n"
+        echo -e
     exit 0
 fi
 
