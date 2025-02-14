@@ -259,7 +259,7 @@ echo -e "#!/bin/bash -l"
 #SBATCH --error=%x-%J.err                                    # error file name will contain job name + job ID
 #SBATCH --time=0-10:00:00                                    # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
 #SBATCH --mem=10G                                            # memory required per node, in the form of [num][M|G|T]
-#SBATCH --ntasks=1                                           # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --ntasks 1                                           # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
 #SBATCH --cpus-per-task=1                                    # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1                                  # number of tasks to be launched on each allocated node
 
