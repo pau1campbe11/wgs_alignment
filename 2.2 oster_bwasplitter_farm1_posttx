@@ -70,8 +70,8 @@ fi
 
 
 if [[ $read2 =~ \.gz$ ]]
-then ln -sf $"{read2}" R2.fq.gz; zcat R2.fq.gz | split -d -a 3 -l 8000000 - R2_tmp_
-else ln -sf $"{read2}" R2.fq; split -d -a 3 -l 8000000 R2.fq R2_tmp_
+then ln -sf "${read2}" R2.fq.gz; zcat R2.fq.gz | split -d -a 3 -l 8000000 - R2_tmp_
+else ln -sf "${read2}" R2.fq; split -d -a 3 -l 8000000 R2.fq R2_tmp_
 fi
 
 
@@ -107,7 +107,7 @@ file_number_func() {
 }
 
 
-array_file_number=$(cat file_number_func)
+array_file_number=$(file_number_func)
 
 echo -e \"#!/bin/bash -l
 
@@ -132,14 +132,14 @@ conda activate bwa_splitter
 
 ############# MY CODE #############
 sample_name=${sample_name}
-SLURM_ARRAY_NUMBER=\$\"SLURM_ARRAY_TASK_ID\"
+SLURM_ARRAY_NUMBER=$"SLURM_ARRAY_TASK_ID"
 R1_file=R1_tmp_00\$\"{SLURM_ARRAY_NUMBER}\"
 R2_file=R2_tmp_00\$\"{SLURM_ARRAY_NUMBER}\"
 
 echo 'ID_bwasplitter_3.1=%J'
 
 
-/users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R '@RG\\\\\\\\\\\tRG:$\"{sample_name}\"\\\\\\\\\\\tID:$\"{sample_name}\"\\\\\\\\\\\tSM:$\"{sample_name}\"' -Y -M -C ref.fa $\"{R1_file}\" $\"{R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R "@RG\tID:${sample_name}\tSM:${sample_name}" -Y -M -C ref.fa "${R1_file}\" "${R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
 touch step3.1_FINISHED\" > step3.1_bwamem
 
 
@@ -242,7 +242,7 @@ conda activate bwa_splitter
 # merge the bam files
 
 ls -1 *.tmp.sort.bam > bam.fofn
-//users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools merge --threads 4 -c -p -f -b bam.fofn tmp.merged.sorted.bam
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools merge --threads 4 -c -p -f -b bam.fofn tmp.merged.sorted.bam
 #rm *.tmp.sort.bam
 
 touch step3_merge_FINISHED" > step3_merge
