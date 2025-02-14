@@ -132,7 +132,7 @@ conda activate bwa_splitter
 
 ############# MY CODE #############
 sample_name=${sample_name}
-SLURM_ARRAY_NUMBER=$"SLURM_ARRAY_TASK_ID"
+SLURM_ARRAY_NUMBER="$SLURM_ARRAY_TASK_ID"
 R1_file=R1_tmp_00\$\"{SLURM_ARRAY_NUMBER}\"
 R2_file=R2_tmp_00\$\"{SLURM_ARRAY_NUMBER}\"
 
