@@ -60,12 +60,12 @@ reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1
 read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.renamed_fastq.gz
 read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.renamed_fastq.gz
 
-ln -sf $"{reference}" ref.fa
+ln -sf "${reference}" ref.fa
 bwa index -b 100000000 ref.fa
 
 if [[ $read1 =~ \.gz$ ]]
-then ln -sf $"{read1}" R1.fq.gz; zcat R1.fq.gz | split -d -a 3 -l 8000000 - R1_tmp_
-else ln -sf $"{read1}" R1.fq; split -d -a 3 -l 8000000 R1.fq R1_tmp_
+then ln -sf "${read1}" R1.fq.gz; zcat R1.fq.gz | split -d -a 3 -l 8000000 - R1_tmp_
+else ln -sf "${read1}" R1.fq; split -d -a 3 -l 8000000 R1.fq R1_tmp_
 fi
 
 
@@ -107,7 +107,7 @@ file_number_func() {
 }
 
 
-array_file_number=\$(file_number_func)
+array_file_number=$(cat file_number_func)
 
 echo -e \"#!/bin/bash -l
 
@@ -192,7 +192,7 @@ echo -e \"#!/bin/bash -l
 #SBATCH --ntasks=1                                       # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
 #SBATCH --cpus-per-task=1                                # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
 #SBATCH --ntasks-per-node=1                              # number of tasks to be launched on each allocated node
-#SBATCH --array=100-$"{array_file_number}"               # create job array of 10 tasks numbered 1 through 10
+#SBATCH --array=100-${array_file_number}               # create job array of 10 tasks numbered 1 through 10
 
 
 ############# LOADING MODULES #############
@@ -203,9 +203,9 @@ conda activate bwa_splitter
 
 ############# MY CODE #############
 sample_name=${sample_name}
-SLURM_ARRAY_NUMBER=\$\"SLURM_ARRAY_TASK_ID\"
-R1_file=R1_tmp_\$\"{SLURM_ARRAY_NUMBER}\"
-R2_file=R2_tmp_\$\"{SLURM_ARRAY_NUMBER}\"
+SLURM_ARRAY_NUMBER="SLURM_ARRAY_TASK_ID\"
+R1_file=R1_tmp_"{SLURM_ARRAY_NUMBER}\"
+R2_file=R2_tmp_"{SLURM_ARRAY_NUMBER}\"
 
 ID_bwasplitter_3.3=\"%J\"
 
@@ -242,7 +242,7 @@ conda activate bwa_splitter
 # merge the bam files
 
 ls -1 *.tmp.sort.bam > bam.fofn
-//users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools merge --threads 4 -cpf -b bam.fofn tmp.merged.sorted.bam
+//users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools merge --threads 4 -c -p -f -b bam.fofn tmp.merged.sorted.bam
 #rm *.tmp.sort.bam
 
 touch step3_merge_FINISHED" > step3_merge
