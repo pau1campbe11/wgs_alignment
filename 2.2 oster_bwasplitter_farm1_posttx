@@ -34,7 +34,7 @@ cd ${sample_name}_bwasplitter_out
 mkdir logfiles
 
 # prepare reference and split data
-echo -e "#!/bin/bash -l
+echo -e "#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                     # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -75,12 +75,12 @@ else ln -sf "${read2}" R2.fq; split -d -a 3 -l 8000000 R2.fq R2_tmp_
 fi
 
 
-touch step1_FINISHED" > step1_bwasplitter
+touch step1_FINISHED > step1_bwasplitter
 chmod a+x step1_bwasplitter
 
 
 # Write a script then Align reads: 
-echo -e "#!/bin/bash -l
+echo -e "#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -109,7 +109,7 @@ file_number_func() {
 
 array_file_number=$(file_number_func)
 
-echo -e \"#!/bin/bash -l
+echo -e \"#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                           # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -140,12 +140,12 @@ echo 'ID_bwasplitter_3.1=%J'
 
 
 /users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R "@RG\tID:${sample_name}\tSM:${sample_name}" -Y -M -C ref.fa "${R1_file}\" "${R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
-touch step3.1_FINISHED\" > step3.1_bwamem
+touch step3.1_FINISHED > step3.1_bwamem
 
 
 chmod a+x step3.1_bwamem
 
-echo -e \"#!/bin/bash -l
+echo -e \"#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                         # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -175,12 +175,12 @@ R2_file=R2_tmp_0\$\"{SLURM_ARRAY_NUMBER}\"
 ID_bwasplitter_3.2=\"%J\"
 
 /users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R '@RG\\\\\\\\\\\tRG:$\"{sample_name}\"\\\\\\\\\\\tID:$\"{sample_name}\"\\\\\\\\\\\tSM:$\"{sample_name}\"' -Y -M -C ref.fa $\"{R1_file}\" $\"{R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
-touch step3.2_FINISHED\" > step3.2_bwamem
+touch step3.2_FINISHED > step3.2_bwamem
 
 
 chmod a+x step3.2_bwamem
 
-echo -e \"#!/bin/bash -l
+echo -e \"#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                            # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -210,17 +210,17 @@ R2_file=R2_tmp_"{SLURM_ARRAY_NUMBER}\"
 ID_bwasplitter_3.3=\"%J\"
 
 /users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R '@RG\\\\\\\\\\\tRG:$\"{sample_name}\"\\\\\\\\\\\tID:$\"{sample_name}\"\\\\\\\\\\\tSM:$\"{sample_name}\"' -Y -M -C ref.fa $\"{R1_file}\" $\"{R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
-touch step3.3_FINISHED_\$\"SLURM_ARRAY_TASK_ID\"\" > step3.3_bwamem
+touch step3.3_FINISHED_${"SLURM_ARRAY_TASK_ID} > step3.3_bwamem
 
 
 chmod a+x step3.3_bwamem
 
-touch step2_FINISHED" > step2_bwamem
+touch step2_FINISHED > step2_bwamem
 
 chmod a+x step2_bwamem 
 
 
-echo -e "#!/bin/bash -l
+echo -e "#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                               # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -245,12 +245,12 @@ ls -1 *.tmp.sort.bam > bam.fofn
 /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools merge --threads 4 -c -p -f -b bam.fofn tmp.merged.sorted.bam
 #rm *.tmp.sort.bam
 
-touch step3_merge_FINISHED" > step3_merge
+touch step3_merge_FINISHED > step3_merge
 
 chmod a+x step3_merge
 
 
-echo -e "#!/bin/bash -l
+echo -e "#!/bin/bash -l"
 
 ############# SLURM SETTINGS #############
 #SBATCH --account=project0005                                # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
@@ -287,7 +287,7 @@ java -Xmx8g -jar /users/2320707c/project0005/conda/envs/bwa_splitter/share/picar
 #rm *.tmp.*
 #mv *.[eo] logfiles/
 touch step4_stats_FINISHED
-touch bam_splitter_COMPLETE" > step4_stats
+touch bam_splitter_COMPLETE > step4_stats
 
 chmod a+x step4_stats
 
