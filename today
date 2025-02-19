@@ -59,9 +59,9 @@ conda activate bwa_splitter
 # prepare reference and split the raw data
 
 sample_name=${sample_name}
-reference=/users/2320707c/project0005/for_paul_oster/oster_ref_genome/GCA_964213955.1_nxOstOste4.1_genomic.fna
-read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.fastq.gz
-read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.fastq.gz
+reference=/users/2320707c/project0005/for_paul_oster/ref_genomes/GCA_964213955.1_nxOstOste4.1_genomic.fna
+read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.renamed_fastq.gz
+read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.renamed_fastq.gz
 
 ln -sf $"{reference}" ref.fa
 bwa index -b 100000000 ref.fa
