@@ -1,0 +1,341 @@
+```
+#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter        # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name  + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name  + job ID
+#SBATCH --time=0-05:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=1G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+
+############# LOADING MODULES (optional) #############
+#module load apps/miniforge
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+############# MY CODE #############
+
+############################################################################################
+# run_bwamem_splitter.sh
+#
+# sd21@sanger.ac.uk July 2018
+#
+# Adjusted for Glasgow HPCC by Jennifer McIntyre August 2020 jennifer.mcintyre@glasgow.ac.uk
+#############################################################################################
+sample_name=farm_1_posttx
+reference=/users/2320707c/project0005/for_paul_oster/oster_ref_genome/GCA_964213955.1_nxOstOste4.1_genomic.fna
+read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.fastq.gz
+read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.fastq.gz
+
+#
+
+if [ -d "${sample_name}_bwasplitter_out" ]; then
+        echo -e "\nThere is already a run started with this sample name. Rename and start again\n"
+    exit 0
+fi
+
+mkdir ${sample_name}_bwasplitter_out
+cd ${sample_name}_bwasplitter_out
+mkdir logfiles
+
+# prepare reference and split data
+echo -e "#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_${sample_name}     # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-05:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=4G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+############# MY CODE #############
+# prepare reference and split the raw data
+
+sample_name=${sample_name}
+reference=/users/2320707c/project0005/for_paul_oster/oster_ref_genome/GCA_964213955.1_nxOstOste4.1_genomic.fna
+read1=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R1_001.renamed_fastq.gz
+read2=/users/2320707c/project0005/for_paul_oster/farm_1_posttx_R2_001.renamed_fastq.gz
+
+ln -sf $"{reference}" ref.fa
+bwa index -b 100000000 ref.fa
+
+if [[ $read1 =~ \.gz$ ]]
+then ln -sf $"{read1}" R1.fq.gz; zcat R1.fq.gz | split -d -a 3 -l 8000000 - R1_tmp_
+else ln -sf $"{read1}" R1.fq; split -d -a 3 -l 8000000 R1.fq R1_tmp_
+fi
+
+
+if [[ $read2 =~ \.gz$ ]]
+then ln -sf $"{read2}" R2.fq.gz; zcat R2.fq.gz | split -d -a 3 -l 8000000 - R2_tmp_
+else ln -sf $"{read2}" R2.fq; split -d -a 3 -l 8000000 R2.fq R2_tmp_
+fi
+
+
+touch step1_FINISHED" > step1_bwasplitter
+chmod a+x step1_bwasplitter
+
+
+# Write a script then Align reads: 
+echo -e "#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_2_${sample_name}       # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-02:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=1G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+############# MY CODE #############
+ls R1_tmp_* | wc -l > file_number
+
+file_number_func() {
+        myresult=\`cat file_number\`
+        echo \"\$myresult\"
+}
+
+
+array_file_number=\$(file_number_func)
+
+echo -e \"#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_3.1_${sample_name}    #some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-10:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=10G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+#SBATCH --array=0-9           # create job array of 10 tasks numbered 1 through 10
+
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+
+############# MY CODE #############
+sample_name=${sample_name}
+SLURM_ARRAY_NUMBER=\$\"SLURM_ARRAY_TASK_ID\"
+R1_file=R1_tmp_00\$\"{SLURM_ARRAY_NUMBER}\"
+R2_file=R2_tmp_00\$\"{SLURM_ARRAY_NUMBER}\"
+
+echo 'ID_bwasplitter_3.1=%J'
+
+
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R '@RG\\\\\\\\\\\tRG:$\"{sample_name}\"\\\\\\\\\\\tID:$\"{sample_name}\"\\\\\\\\\\\tSM:$\"{sample_name}\"' -Y -M -C ref.fa $\"{R1_file}\" $\"{R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
+touch step3.1_FINISHED\" > step3.1_bwamem
+
+
+chmod a+x step3.1_bwamem
+
+echo -e \"#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_3.2_${sample_name}     # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-10:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=10G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+#SBATCH --array=10-99           # create job array of 10 tasks numbered 1 through 10
+
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+
+############# MY CODE #############
+sample_name=${sample_name}
+SLURM_ARRAY_NUMBER=\$\"SLURM_ARRAY_TASK_ID\"
+R1_file=R1_tmp_0\$\"{SLURM_ARRAY_NUMBER}\"
+R2_file=R2_tmp_0\$\"{SLURM_ARRAY_NUMBER}\"
+
+ID_bwasplitter_3.2=\"%J\"
+
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R '@RG\\\\\\\\\\\tRG:$\"{sample_name}\"\\\\\\\\\\\tID:$\"{sample_name}\"\\\\\\\\\\\tSM:$\"{sample_name}\"' -Y -M -C ref.fa $\"{R1_file}\" $\"{R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
+touch step3.2_FINISHED\" > step3.2_bwamem
+
+
+chmod a+x step3.2_bwamem
+
+echo -e \"#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_3.3_${sample_name}        # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-10:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=10G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+#SBATCH --array=100-$"{array_file_number}"           # create job array of 10 tasks numbered 1 through 10
+
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+
+############# MY CODE #############
+sample_name=${sample_name}
+SLURM_ARRAY_NUMBER=\$\"SLURM_ARRAY_TASK_ID\"
+R1_file=R1_tmp_\$\"{SLURM_ARRAY_NUMBER}\"
+R2_file=R2_tmp_\$\"{SLURM_ARRAY_NUMBER}\"
+
+ID_bwasplitter_3.3=\"%J\"
+
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/bwa mem -t 4 -R '@RG\\\\\\\\\\\tRG:$\"{sample_name}\"\\\\\\\\\\\tID:$\"{sample_name}\"\\\\\\\\\\\tSM:$\"{sample_name}\"' -Y -M -C ref.fa $\"{R1_file}\" $\"{R2_file}\" | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -b - | /users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools sort --threads 4 -o $\"{R1_file}\".bwamem.tmp.sort.bam - 
+touch step3.3_FINISHED_\$\"SLURM_ARRAY_TASK_ID\"\" > step3.3_bwamem
+
+
+chmod a+x step3.3_bwamem
+
+touch step2_FINISHED" > step2_bwamem
+
+chmod a+x step2_bwamem 
+
+
+echo -e "#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_merge_${sample_name}      # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-10:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=10G               # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+############# MY CODE #############
+# merge the bam files
+
+ls -1 *.tmp.sort.bam > bam.fofn
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools merge --threads 4 -cpf -b bam.fofn tmp.merged.sorted.bam
+#rm *.tmp.sort.bam
+
+touch step3_merge_FINISHED" > step3_merge
+
+chmod a+x step3_merge
+
+
+echo -e "#!/bin/bash -l
+
+############# SLURM SETTINGS #############
+#SBATCH --account=project0005   # account name (mandatory), if the job runs under a project then it'll be the project name, if not then it should =none
+#SBATCH --job-name=bwasplitter_4_stats_${sample_name}        # some descriptive job name of your choice
+#SBATCH --output=%x-%J.out      # output file name will contain job name + job ID
+#SBATCH --error=%x-%J.err       # error file name will contain job name + job ID
+#SBATCH --time=0-10:00:00       # time limit for the whole run, in the form of d-hh:mm:ss, also accepts mm, mm:ss, hh:mm:ss, d-hh, d-hh:mm
+#SBATCH --mem=10G                # memory required per node, in the form of [num][M|G|T]
+#SBATCH --ntasks=1              # number of Slurm tasks to be launched, increase for multi-process runs ex. MPI
+#SBATCH --cpus-per-task=1       # number of processor cores to be assigned for each task, default is 1, increase for multi-threaded runs
+#SBATCH --ntasks-per-node=1     # number of tasks to be launched on each allocated node
+
+############# LOADING MODULES (optional) #############
+#module load apps/xxx
+#module load libs/xxx
+
+module load apps/miniforge
+conda activate bwa_splitter
+
+############# MY CODE #############
+# mark duplicates, generate stats, and finalise
+
+sample_name=${sample_name}    
+
+
+ulimit -Sn > snlimit.txt # This will show you the number of jobs you have access to as a check
+
+java -Xmx8g -jar /users/2320707c/project0005/conda/envs/bwa_splitter/share/picard-2.5.0-2/picard.jar MarkDuplicates INPUT=tmp.merged.sorted.bam OUTPUT=tmp.merged.sorted.marked.bam METRICS_FILE=tmp.merged.sorted.marked.metrics TMP_DIR=$PWD/tmp
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools flagstat tmp.merged.sorted.marked.bam > $"{sample_name}".merged.sorted.marked.flagstat
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools stats tmp.merged.sorted.marked.bam | grep ^SN | cut -f 2- > $"{sample_name}".merged.sorted.marked.stats
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/bamtools stats -in tmp.merged.sorted.marked.bam > $"{sample_name}".merged.sorted.marked.bamstats
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -F 12 -b tmp.merged.sorted.marked.bam -o $"{sample_name}".merged.sorted.marked.bam
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools view --threads 4 -f 12 tmp.merged.sorted.marked.bam -o $"{sample_name}".unmapped.bam
+/users/2320707c/project0005/conda/envs/bwa_splitter/bin/samtools index -b $"{sample_name}".merged.sorted.marked.bam
+#rm R[12]_*
+#rm *.tmp.*
+#mv *.[eo] logfiles/
+touch step4_stats_FINISHED
+touch bam_splitter_COMPLETE" > step4_stats
+
+chmod a+x step4_stats
+
+#----- RELEASE THE KRAKEN!
+# run - reference and paired read setup
+sbatch -A project0005 step1_bwasplitter
+
+while [ ! -f step1_FINISHED ]
+do
+  sleep 2
+done
+
+
+# run - write alignment script file, counting number of read files
+sbatch -A project0005 step2_bwamem
+
+while [ ! -f step2_FINISHED ]
+do
+  sleep 2
+done
+
+# run - align reads
+sbatch -A project0005 step3.1_bwamem
+sbatch -A project0005 step3.2_bwamem
+sbatch -A project0005 step3.3_bwamem
+```
