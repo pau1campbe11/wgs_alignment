@@ -61,7 +61,7 @@ echo -e "#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 ############# MY CODE #############
@@ -109,7 +109,7 @@ echo -e "#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 ############# MY CODE #############
@@ -142,7 +142,7 @@ echo -e \"#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 
@@ -180,7 +180,7 @@ echo -e \"#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 
@@ -217,7 +217,7 @@ echo -e \"#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 
@@ -257,7 +257,7 @@ echo -e "#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 ############# MY CODE #############
@@ -289,7 +289,7 @@ echo -e "#!/bin/bash -l
 #module load apps/xxx
 #module load libs/xxx
 
-module load apps/anaconda3/2023.03/bin
+module load apps/mini forge
 conda activate bwa_splitter
 
 ############# MY CODE #############
