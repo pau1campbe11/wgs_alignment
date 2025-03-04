@@ -1,0 +1,28 @@
+
+
+
+
+# Calculate Fst in 10kb windows along the genome:
+
+module load grenedalf/0.3.0
+
+
+grenedalf fst \
+--sync-path /home/jenni/data_folder/working_folder/selection_lines_poolseq/mpileup/Jan24_correct_order_syncs/SLps_only_co_Hcwbps18_q20Q30_noindels_ss57.java.sync \
+--reference-genome-fasta-file /home/jenni/data_folder/wbps18/haemonchus_contortus.PRJEB506.WBPS18.genomic.fa \
+--rename-samples-file /home/jenni/data_folder/working_folder/selection_lines_poolseq/pairwise_comparisons/LINES_IN_CORRECT_ORDER/grenedalf/Jan24_F0_vs_all_sel_lines_only/SL_ss57_sample_names.txt \
+--comparand-list /home/jenni/data_folder/working_folder/selection_lines_poolseq/pairwise_comparisons/LINES_IN_CORRECT_ORDER/grenedalf/Jan24_F0_vs_all_sel_lines_only/SL_pairwise_comparisons.txt \
+--filter-sample-min-count 2 \
+--filter-sample-min-coverage 57 \
+--filter-sample-max-coverage 57 \
+--window-type sliding \
+--window-sliding-width 10000 \
+--window-sliding-stride 10000 \
+--method unbiased-nei \
+--pool-sizes 400 \
+--omit-na-windows \
+--separator-char tab \
+--out-dir /home/jenni/data_folder/working_folder/selection_lines_poolseq/pairwise_comparisons/LINES_IN_CORRECT_ORDER/grenedalf/Jan24_F0_vs_all_sel_lines_only/ss57 \
+--file-prefix 400_Gf_F0_vs_SL_only_Sel_lines_Hcwbps18_q20Q30_noindels_ss57_10kb_fst \
+--log-file grenedalf_10kb_F0_vs_SL_only_fst_ss57.log \
+2>error_log_10kb_fst_f057 &
