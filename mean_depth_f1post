@@ -13,4 +13,18 @@
 
 ### Code section
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' farm1_depth_out.txt > averagesF1POST.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr1.txt > f1_chr1_mean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr2.txt > f1_chr2_mean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr3.txt > f1_chr3_mean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr4.txt > f1_chr4_mean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr5.txt > f1_chr5_mean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chrx.txt > f1_chrx_mean.txt
+
+
+
+
