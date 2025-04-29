@@ -23,11 +23,11 @@ grenedalf fst \
 --rename-samples-file /users/2320707c/project0005/for_paul_oster/4.Grenedalf/farm1/rename/f1_rename.txt \
 --comparand-list  /users/2320707c/project0005/for_paul_oster/4.Grenedalf/farm1/compared/f1_comparison.txt \
 --filter-sample-min-count 2 \
---filter-sample-min-coverage 10 \
---filter-sample-max-coverage 100 \
---window-type sliding \
---window-sliding-width 10000 \
---window-sliding-stride 10000 \
+--filter-sample-min-coverage 40 \
+--filter-sample-max-coverage 180 \
+--window-type interval \
+--window-interval-width 10000 \
+--window-interval-stride 10000 \
 --method unbiased-nei \
 --pool-sizes 1000 \
 --omit-na-windows \
