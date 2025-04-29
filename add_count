@@ -13,14 +13,14 @@
 
 ### Code section
 
-awk '{ $NF = $NF " " (NR * 10000); print }' f1post_chr1_mean.txt > f1post_chr1_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }' f1_chr1_mean.txt > f1post_chr1_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }' f1post_chr2_mean.txt > f1post_chr2_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }' f1_chr2_mean.txt > f1post_chr2_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }' f1post_chr3_mean.txt > f1post_chr3_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }' f1_chr3_mean.txt > f1post_chr3_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }' f1post_chr4_mean.txt > f1post_chr4_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }' f1_chr4_mean.txt > f1post_chr4_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }' f1post_chr5_mean.txt > f1post_chr5_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }' f1_chr5_mean.txt > f1post_chr5_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }' f1post_chrx_mean.txt > f1post_chrx_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }' f1_chrx_mean.txt > f1post_chrx_count.txt
