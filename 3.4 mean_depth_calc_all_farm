@@ -13,18 +13,149 @@
 
 ### Code section
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr1.txt > f1post_chr1_mean.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr1.txt > f1post_chr1_10kmean.txt
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr2.txt > f1post_chr2_mean.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr2.txt > f1post_chr2_10kmean.txt
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr3.txt > f1post_chr3_mean.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr3.txt > f1post_chr3_10kmean.txt
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr4.txt > f1post_chr4_mean.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr4.txt > f1post_chr4_10kmean.txt
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chr5.txt > f1post_chr5_mean.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr5.txt > f1post_chr5_10kmean.txt
 
-awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1chrx.txt > f1post_chrx_mean.txt
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchrx.txt > f1post_chrx_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr1.txt > f1pre_chr1_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr2.txt > f1pre_chr2_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr3.txt > f1pre_chr3_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr4.txt > f1pre_chr4_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr5.txt > f1pre_chr5_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechrx.txt > f1pre_chrx_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr1.txt > f2post_chr1_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr2.txt > f2post_chr2_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr3.txt > f2post_chr3_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr4.txt > f2post_chr4_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr5.txt > f2post_chr5_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchrx.txt > f2post_chrx_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr1.txt > f2pre_chr1_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr2.txt > f2pre_chr2_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr3.txt > f2pre_chr3_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr4.txt > f2pre_chr4_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr5.txt > f2pre_chr5_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechrx.txt > f2pre_chrx_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr1.txt > f3post_chr1_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr2.txt > f3post_chr2_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr3.txt > f3post_chr3_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr4.txt > f3post_chr4_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr5.txt > f3post_chr5_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchrx.txt > f3post_chrx_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr1.txt > f3pre_chr1_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr2.txt > f3pre_chr2_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr3.txt > f3pre_chr3_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr4.txt > f3pre_chr4_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr5.txt > f3pre_chr5_10kmean.txt
+
+awk '{ sum += $3; count++; if (count == 10000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechrx.txt > f3pre_chrx_10kmean.txt
 
 
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr1.txt > f1post_chr1_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr2.txt > f1post_chr2_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr3.txt > f1post_chr3_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr4.txt > f1post_chr4_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchr5.txt > f1post_chr5_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1postchrx.txt > f1post_chrx_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr1.txt > f1pre_chr1_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr2.txt > f1pre_chr2_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr3.txt > f1pre_chr3_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr4.txt > f1pre_chr4_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechr5.txt > f1pre_chr5_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f1prechrx.txt > f1pre_chrx_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr1.txt > f2post_chr1_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr2.txt > f2post_chr2_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr3.txt > f2post_chr3_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr4.txt > f2post_chr4_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchr5.txt > f2post_chr5_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2postchrx.txt > f2post_chrx_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr1.txt > f2pre_chr1_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr2.txt > f2pre_chr2_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr3.txt > f2pre_chr3_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr4.txt > f2pre_chr4_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechr5.txt > f2pre_chr5_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f2prechrx.txt > f2pre_chrx_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr1.txt > f3post_chr1_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr2.txt > f3post_chr2_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr3.txt > f3post_chr3_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr4.txt > f3post_chr4_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchr5.txt > f3post_chr5_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3postchrx.txt > f3post_chrx_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr1.txt > f3pre_chr1_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr2.txt > f3pre_chr2_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr3.txt > f3pre_chr3_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr4.txt > f3pre_chr4_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechr5.txt > f3pre_chr5_500kmean.txt
+
+awk '{ sum += $3; count++; if (count == 500000) { print sum / count; sum = 0; count = 0 } } END { if (count > 0) print sum / count }' f3prechrx.txt > f3pre_chrx_500kmean.txt
 
 
