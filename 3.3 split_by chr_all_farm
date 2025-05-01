@@ -13,15 +13,75 @@
 
 ### Code section
 
-awk '$1 == "OZ172662.1"' farm1_depth_out.txt > f1chr1.txt
+awk '$1 == "OZ172662.1"' farm1post_depth_out.txt > f1postchr1.txt
 
-awk '$1 == "OZ172663.1"' farm1_depth_out.txt > f1chr2.txt
+awk '$1 == "OZ172663.1"' farm1post_depth_out.txt > f1postchr2.txt
 
-awk '$1 == "OZ172664.1"' farm1_depth_out.txt > f1chr3.txt
+awk '$1 == "OZ172664.1"' farm1post_depth_out.txt > f1postchr3.txt
 
-awk '$1 == "OZ172665.1"' farm1_depth_out.txt > f1chr4.txt
+awk '$1 == "OZ172665.1"' farm1post_depth_out.txt > f1postchr4.txt
 
-awk '$1 == "OZ172666.1"' farm1_depth_out.txt > f1chr5.txt
+awk '$1 == "OZ172666.1"' farm1post_depth_out.txt > f1postchr5.txt
 
-awk '$1 == "OZ172667.1"' farm1_depth_out.txt > f1chrx.txt
+awk '$1 == "OZ172667.1"' farm1post_depth_out.txt > f1postchrx.txt
 
+
+awk '$1 == "OZ172662.1"' farm1pre_depth_out.txt > f1prechr1.txt
+
+awk '$1 == "OZ172663.1"' farm1pre_depth_out.txt > f1prechr2.txt
+
+awk '$1 == "OZ172664.1"' farm1pre_depth_out.txt > f1prechr3.txt
+
+awk '$1 == "OZ172665.1"' farm1pre_depth_out.txt > f1prechr4.txt
+
+awk '$1 == "OZ172666.1"' farm1pre_depth_out.txt > f1prechr5.txt
+
+awk '$1 == "OZ172667.1"' farm1pre_depth_out.txt > f1prechrx.txt
+
+awk '$1 == "OZ172662.1"' farm2post_depth_out.txt > f2postchr1.txt
+
+awk '$1 == "OZ172663.1"' farm2post_depth_out.txt > f2postchr2.txt
+
+awk '$1 == "OZ172664.1"' farm2post_depth_out.txt > f2postchr3.txt
+
+awk '$1 == "OZ172665.1"' farm2post_depth_out.txt > f2postchr4.txt
+
+awk '$1 == "OZ172666.1"' farm2post_depth_out.txt > f2postchr5.txt
+
+awk '$1 == "OZ172667.1"' farm2post_depth_out.txt > f2postchrx.txt
+
+awk '$1 == "OZ172662.1"' farm2pre_depth_out.txt > f2prechr1.txt
+
+awk '$1 == "OZ172663.1"' farm2pre_depth_out.txt > f2prechr2.txt
+
+awk '$1 == "OZ172664.1"' farm2pre_depth_out.txt > f2prechr3.txt
+
+awk '$1 == "OZ172665.1"' farm2pre_depth_out.txt > f2prechr4.txt
+
+awk '$1 == "OZ172666.1"' farm2pre_depth_out.txt > f2prechr5.txt
+
+awk '$1 == "OZ172667.1"' farm2pre_depth_out.txt > f2prechrx.txt
+
+awk '$1 == "OZ172662.1"' farm3post_depth_out.txt > f3postchr1.txt
+
+awk '$1 == "OZ172663.1"' farm3post_depth_out.txt > f3postchr2.txt
+
+awk '$1 == "OZ172664.1"' farm3post_depth_out.txt > f3postchr3.txt
+
+awk '$1 == "OZ172665.1"' farm3post_depth_out.txt > f3postchr4.txt
+
+awk '$1 == "OZ172666.1"' farm3post_depth_out.txt > f3postchr5.txt
+
+awk '$1 == "OZ172667.1"' farm3post_depth_out.txt > f3postchrx.txt
+
+awk '$1 == "OZ172662.1"' farm3post_depth_out.txt > f3postchr1.txt
+
+awk '$1 == "OZ172663.1"' farm3post_depth_out.txt > f3postchr2.txt
+
+awk '$1 == "OZ172664.1"' farm3post_depth_out.txt > f3postchr3.txt
+
+awk '$1 == "OZ172665.1"' farm3post_depth_out.txt > f3postchr4.txt
+
+awk '$1 == "OZ172666.1"' farm3post_depth_out.txt > f3postchr5.txt
+
+awk '$1 == "OZ172667.1"' farm3post_depth_out.txt > f3postchrx.txt
