@@ -159,4 +159,4 @@ awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr4_500k_mean.txt > f3prechr
 
 awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr5_500k_mean.txt > f3prechr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chrx_500k_mean.txt > f3prechr6_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chrx_500k_mean.txt > f3prechrx_500k_count.txt
