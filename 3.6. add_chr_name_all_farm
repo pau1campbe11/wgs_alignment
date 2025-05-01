@@ -14,14 +14,153 @@
 ### Code section
 
 
-awk -v newcol="OZ172662.1" '{ print newcol, $0 }' f1post_chr1_count.txt > complete_f1_chr1_post_output.txt
 
-awk -v newcol="OZ172663.1" '{ print newcol, $0 }' f1post_chr2_count.txt > complete_f1_chr2_post_output.txt
 
-awk -v newcol="OZ172664.1" '{ print newcol, $0 }' f1post_chr3_count.txt > complete_f1_chr3_post_output.txt
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f1postchr1_10k_count.txt > f1postchr1_10k_complete.txt 
 
-awk -v newcol="OZ172665.1" '{ print newcol, $0 }' f1post_chr4_count.txt > complete_f1_chr4_post_output.txt
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f1postchr2_10k_count.txt > f1postchr2_10k_complete.txt 
 
-awk -v newcol="OZ172666.1" '{ print newcol, $0 }' f1post_chr5_count.txt > complete_f1_chr5_post_output.txt
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f1postchr3_10k_count.txt > f1postchr3_10k_complete.txt 
 
-awk -v newcol="OZ172667.1" '{ print newcol, $0 }' f1post_chrx_count.txt > complete_f1_chrx_post_output.txt
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f1postchr4_10k_count.txt > f1postchr4_10k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f1postchr5_10k_count.txt > f1postchr5_10k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f1postchrx_10k_count.txt > f1postchrx_10k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f1prechr1_10k_count.txt > f1prechr1_10k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f1prechr2_10k_count.txt > f1prechr2_10k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f1prechr3_10k_count.txt > f1prechr3_10k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f1prechr4_10k_count.txt > f1prechr4_10k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f1prechr5_10k_count.txt > f1prechr5_10k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f1prechrx_10k_count.txt > f1prechrx_10k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f2postchr1_10k_count.txt > f2postchr1_10k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f2postchr2_10k_count.txt > f2postchr2_10k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f2postchr3_10k_count.txt > f2postchr3_10k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f2postchr4_10k_count.txt > f2postchr4_10k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f2postchr5_10k_count.txt > f2postchr5_10k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f2postchrx_10k_count.txt > f2postchrx_10k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f2prechr1_1_10k_count.txt > f2prechr1_10k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f2prechr2_10k_count.txt > f2prechr2_10k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f2prechr3_10k_count.txt > f2prechr3_10k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f2prechr4_10k_count.txt > f2prechr4_10k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f2prechr5_10k_count.txt > f2prechr5_10k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f2prechrx_10k_count.txt > f2prechrx_10k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f3postchr1_10k_count.txt > f3postchr1_10k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f3postchr2_10k_count.txt > f3postchr2_10k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f3postchr3_10k_count.txt > f3postchr3_10k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f3postchr4_10k_count.txt > f3postchr4_10k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f3postchr5_10k_count.txt > f3postchr5_10k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f3postchrx_10k_count.txt > f3postchrx_10k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f3prechr1_10k_count.txt > f3prechr1_10k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f3prechr2_10k_count.txt > f3prechr2_10k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f3prechr3_10k_count.txt > f3prechr3_10k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f3prechr4_10k_count.txt > f3prechr4_10k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f3prechr5_10k_count.txt > f3prechr5_10k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f3prechrx_10k_count.txt > f3prechrx_10k_complete.txt 
+
+
+
+
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f1postchr1_500k_count.txt > f1postchr1_500k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f1postchr2_500k_count.txt > f1postchr2_500k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f1postchr3_500k_count.txt > f1postchr3_500k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f1postchr4_500k_count.txt > f1postchr4_500k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f1postchr5_500k_count.txt > f1postchr5_500k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f1postchrx_500k_count.txt > f1postchrx_500k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f1prechr1_500k_count.txt > f1prechr1_500k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f1prechr2_500k_count.txt > f1prechr2_500k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f1prechr3_500k_count.txt > f1prechr3_500k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f1prechr4_500k_count.txt > f1prechr4_500k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f1prechr5_500k_count.txt > f1prechr5_500k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f1prechrx_500k_count.txt > f1prechrx_500k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f2postchr1_500k_count.txt > f2postchr1_500k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f2postchr2_500k_count.txt > f2postchr2_500k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f2postchr3_500k_count.txt > f2postchr3_500k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f2postchr4_500k_count.txt > f2postchr4_500k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f2postchr5_500k_count.txt > f2postchr5_500k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f2postchrx_500k_count.txt > f2postchrx_500k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f2prechr1_1_500k_count.txt > f2prechr1_500k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f2prechr2_500k_count.txt > f2prechr2_500k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f2prechr3_500k_count.txt > f2prechr3_500k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f2prechr4_500k_count.txt > f2prechr4_500k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f2prechr5_500k_count.txt > f2prechr5_500k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f2prechrx_500k_count.txt > f2prechrx_500k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f3postchr1_500k_count.txt > f3postchr1_500k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f3postchr2_500k_count.txt > f3postchr2_500k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f3postchr3_500k_count.txt > f3postchr3_500k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f3postchr4_500k_count.txt > f3postchr4_500k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f3postchr5_500k_count.txt > f3postchr5_500k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f3postchrx_500k_count.txt > f3postchrx_500k_complete.txt 
+
+awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f3prechr1_500k_count.txt > f3prechr1_500k_complete.txt 
+
+awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f3prechr2_500k_count.txt > f3prechr2_500k_complete.txt 
+
+awk -v newcol="OZ172664.1" '{ print newcol, $0 }'   f3prechr3_500k_count.txt > f3prechr3_500k_complete.txt 
+
+awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f3prechr4_500k_count.txt > f3prechr4_500k_complete.txt 
+
+awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f3prechr5_500k_count.txt > f3prechr5_500k_complete.txt 
+
+awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f3prechrx_500k_count.txt > f3prechrx_500k_complete.txt 
+
