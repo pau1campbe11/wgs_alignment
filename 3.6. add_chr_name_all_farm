@@ -14,8 +14,6 @@
 ### Code section
 
 
-
-
 awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f1postchr1_10k_count.txt > f1postchr1_10k_complete.txt 
 
 awk -v newcol="OZ172663.1" '{ print newcol, $0 }'   f1postchr2_10k_count.txt > f1postchr2_10k_complete.txt 
@@ -87,9 +85,6 @@ awk -v newcol="OZ172665.1" '{ print newcol, $0 }'   f3prechr4_10k_count.txt > f3
 awk -v newcol="OZ172666.1" '{ print newcol, $0 }'   f3prechr5_10k_count.txt > f3prechr5_10k_complete.txt 
 
 awk -v newcol="OZ172667.1" '{ print newcol, $0 }'   f3prechrx_10k_count.txt > f3prechrx_10k_complete.txt 
-
-
-
 
 
 awk -v newcol="OZ172662.1" '{ print newcol, $0 }'   f1postchr1_500k_count.txt > f1postchr1_500k_complete.txt 
