@@ -25,7 +25,6 @@ awk '$1 == "OZ172666.1"' farm1post_depth_out.txt > f1postchr5.txt
 
 awk '$1 == "OZ172667.1"' farm1post_depth_out.txt > f1postchrx.txt
 
-
 awk '$1 == "OZ172662.1"' farm1pre_depth_out.txt > f1prechr1.txt
 
 awk '$1 == "OZ172663.1"' farm1pre_depth_out.txt > f1prechr2.txt
