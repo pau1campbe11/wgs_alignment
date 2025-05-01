@@ -13,150 +13,150 @@
 
 ### Code section
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr1_10k_mean.txt f1postchr1_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr1_10k_mean.txt > f1postchr1_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr2_10k_mean.txt f1postchr2_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr2_10k_mean.txt > f1postchr2_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr3_10k_mean.txt f1postchr3_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr3_10k_mean.txt > f1postchr3_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr4_10k_mean.txt f1postchr4_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr4_10k_mean.txt > f1postchr4_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr5_10k_mean.txt f1postchr5_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr5_10k_mean.txt > f1postchr5_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chrx_10k_mean.txt f1postchrx_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chrx_10k_mean.txt > f1postchrx_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr1_10k_mean.txt f1prechr1_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr1_10k_mean.txt > f1prechr1_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr2_10k_mean.txt f1prechr2_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr2_10k_mean.txt > f1prechr2_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr3_10k_mean.txt f1prechr3_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr3_10k_mean.txt > f1prechr3_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr4_10k_mean.txt f1prechr4_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr4_10k_mean.txt > f1prechr4_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr5_10k_mean.txt f1prechr5_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr5_10k_mean.txt > f1prechr5_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chrx_10k_mean.txt f1prechrx_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chrx_10k_mean.txt > f1prechrx_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr1_10k_mean.txt f2postchr1_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr1_10k_mean.txt > f2postchr1_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr2_10k_mean.txt f2postchr2_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr2_10k_mean.txt > f2postchr2_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr3_10k_mean.txt f2postchr3_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr3_10k_mean.txt > f2postchr3_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr4_10k_mean.txt f2postchr4_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr4_10k_mean.txt > f2postchr4_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr5_10k_mean.txt f2postchr5_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr5_10k_mean.txt > f2postchr5_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chrx_10k_mean.txt f2postchrx_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chrx_10k_mean.txt > f2postchrx_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr1_10k_mean.txt f2prechr1_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr1_10k_mean.txt > f2prechr1_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr2_10k_mean.txt f2prechr2_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr2_10k_mean.txt > f2prechr2_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr3_10k_mean.txt f2prechr3_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr3_10k_mean.txt > f2prechr3_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr4_10k_mean.txt f2prechr4_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr4_10k_mean.txt > f2prechr4_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr5_10k_mean.txt f2prechr5_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr5_10k_mean.txt > f2prechr5_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chrx_10k_mean.txt f2prechrx_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chrx_10k_mean.txt > f2prechrx_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr1_10k_mean.txt f3postchr1_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr1_10k_mean.txt > f3postchr1_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr2_10k_mean.txt f3postchr2_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr2_10k_mean.txt > f3postchr2_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr3_10k_mean.txt f3postchr3_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr3_10k_mean.txt > f3postchr3_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr4_10k_mean.txt f3postchr4_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr4_10k_mean.txt > f3postchr4_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr5_10k_mean.txt f3postchr5_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr5_10k_mean.txt > f3postchr5_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chrx_10k_mean.txt f3postchrx_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chrx_10k_mean.txt > f3postchrx_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr1_10k_mean.txt f3prechr1_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr1_10k_mean.txt > f3prechr1_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr2_10k_mean.txt f3prechr2_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr2_10k_mean.txt > f3prechr2_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr3_10k_mean.txt f3prechr3_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr3_10k_mean.txt > f3prechr3_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr4_10k_mean.txt f3prechr4_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr4_10k_mean.txt > f3prechr4_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr5_10k_mean.txt f3prechr5_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr5_10k_mean.txt > f3prechr5_10k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chrx_10k_mean.txt f3prechr6_10k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chrx_10k_mean.txt > f3prechr6_10k_count.txt
 
 
 
 
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr1_500k_mean.txt f1postchr1_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr1_500k_mean.txt > f1postchr1_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr2_500k_mean.txt f1postchr2_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr2_500k_mean.txt > f1postchr2_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr3_500k_mean.txt f1postchr3_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr3_500k_mean.txt > f1postchr3_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr4_500k_mean.txt f1postchr4_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr4_500k_mean.txt > f1postchr4_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr5_500k_mean.txt f1postchr5_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chr5_500k_mean.txt > f1postchr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chrx_500k_mean.txt f1postchrx_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1post_chrx_500k_mean.txt > f1postchrx_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr1_500k_mean.txt f1prechr1_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr1_500k_mean.txt > f1prechr1_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr2_500k_mean.txt f1prechr2_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr2_500k_mean.txt > f1prechr2_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr3_500k_mean.txt f1prechr3_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr3_500k_mean.txt > f1prechr3_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr4_500k_mean.txt f1prechr4_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr4_500k_mean.txt > f1prechr4_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr5_500k_mean.txt f1prechr5_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chr5_500k_mean.txt > f1prechr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chrx_500k_mean.txt f1prechrx_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f1pre_chrx_500k_mean.txt > f1prechrx_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr1_500k_mean.txt f2postchr1_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr1_500k_mean.txt > f2postchr1_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr2_500k_mean.txt f2postchr2_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr2_500k_mean.txt > f2postchr2_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr3_500k_mean.txt f2postchr3_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr3_500k_mean.txt > f2postchr3_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr4_500k_mean.txt f2postchr4_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr4_500k_mean.txt > f2postchr4_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr5_500k_mean.txt f2postchr5_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chr5_500k_mean.txt > f2postchr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chrx_500k_mean.txt f2postchrx_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2post_chrx_500k_mean.txt > f2postchrx_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr1_500k_mean.txt f2prechr1_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr1_500k_mean.txt > f2prechr1_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr2_500k_mean.txt f2prechr2_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr2_500k_mean.txt > f2prechr2_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr3_500k_mean.txt f2prechr3_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr3_500k_mean.txt > f2prechr3_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr4_500k_mean.txt f2prechr4_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr4_500k_mean.txt > f2prechr4_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr5_500k_mean.txt f2prechr5_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chr5_500k_mean.txt > f2prechr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chrx_500k_mean.txt f2prechrx_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f2pre_chrx_500k_mean.txt > f2prechrx_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr1_500k_mean.txt f3postchr1_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr1_500k_mean.txt > f3postchr1_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr2_500k_mean.txt f3postchr2_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr2_500k_mean.txt > f3postchr2_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr3_500k_mean.txt f3postchr3_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr3_500k_mean.txt > f3postchr3_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr4_500k_mean.txt f3postchr4_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr4_500k_mean.txt > f3postchr4_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr5_500k_mean.txt f3postchr5_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chr5_500k_mean.txt > f3postchr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chrx_500k_mean.txt f3postchrx_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3post_chrx_500k_mean.txt > f3postchrx_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr1_500k_mean.txt f3prechr1_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr1_500k_mean.txt > f3prechr1_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr2_500k_mean.txt f3prechr2_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr2_500k_mean.txt > f3prechr2_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr3_500k_mean.txt f3prechr3_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr3_500k_mean.txt > f3prechr3_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr4_500k_mean.txt f3prechr4_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr4_500k_mean.txt > f3prechr4_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr5_500k_mean.txt f3prechr5_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chr5_500k_mean.txt > f3prechr5_500k_count.txt
 
-awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chrx_500k_mean.txt f3prechr6_500k_count.txt
+awk '{ $NF = $NF " " (NR * 10000); print }'  f3pre_chrx_500k_mean.txt > f3prechr6_500k_count.txt
