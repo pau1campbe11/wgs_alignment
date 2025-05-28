@@ -17,18 +17,18 @@
 
 ################ FARM1 AVERAGE (FILTERED DATASET)
 
-awk '{sum += $3} END {print sum/NR}' f1post_depth_updated.txt > f1post_filtered_average.txt
-awk '{sum += $3} END {print sum/NR}' f1pre_depth_updated.txt > f1pre_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f1post_depth_filtered.txt > f1post_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f1pre_depth_filtered.txt > f1pre_filtered_average.txt
 
 ################ FARM2 AVERAGE (FILTERED DATASET)
 
-awk '{sum += $3} END {print sum/NR}' f2post_depth_updated.txt > f2post_filtered_average.txt
-awk '{sum += $3} END {print sum/NR}' f2pre_depth_updated.txt > f2pre_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f2post_depth_filtered.txt > f2post_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f2pre_depth_filtered.txt > f2pre_filtered_average.txt
 
 ################ FARM3 AVERAGE (FILTERED DATASET)
 
-awk '{sum += $3} END {print sum/NR}' f3post_depth_updated.txt > f3post_filtered_average.txt
-awk '{sum += $3} END {print sum/NR}' f3pre_depth_updated.txt > f3pre_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f3post_depth_filtered.txt > f3post_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f3pre_depth_filtered.txt > f3pre_filtered_average.txt
 
 ################ FARM1 POST 95% CI (FILTERED DATASET)
 
@@ -44,7 +44,7 @@ END {
   sd = sqrt(variance);
   ci = 1.96 * (sd / sqrt(n));
   printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
-}' f1post_depth_updated.txt > f1post_filtered_95ci.txt
+}' f1post_depth_filtered.txt > f1post_filtered_95ci.txt
 
 ################ FARM1 PRE 95% CI (FILTERED DATASET)
 
@@ -60,7 +60,7 @@ END {
   sd = sqrt(variance);
   ci = 1.96 * (sd / sqrt(n));
   printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
-}' f1pre_depth_updated.txt > f1pre_filtered_95ci.txt
+}' f1pre_depth_filtered.txt > f1pre_filtered_95ci.txt
 
 ################ FARM2 POST 95% CI (FILTERED DATASET)
 
@@ -76,7 +76,7 @@ END {
   sd = sqrt(variance);
   ci = 1.96 * (sd / sqrt(n));
   printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
-}' f2post_depth_updated.txt > > f2post_filtered_95ci.txt
+}' f2post_depth_filtered.txt > > f2post_filtered_95ci.txt
 
 ################ FARM2 PRE 95% CI (FILTERED DATASET)
 
@@ -92,7 +92,7 @@ END {
   sd = sqrt(variance);
   ci = 1.96 * (sd / sqrt(n));
   printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
-}' f2pre_depth_updated.txt > f2pre_filtered_95ci.txt
+}' f2pre_depth_filtered.txt > f2pre_filtered_95ci.txt
 
 ################ FARM3 POST 95% CI (FILTERED DATASET)
 
@@ -108,7 +108,7 @@ END {
   sd = sqrt(variance);
   ci = 1.96 * (sd / sqrt(n));
   printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
-}' f3post_depth_updated.txt > f3post_filtered_95ci.txt
+}' f3post_depth_filtered.txt > f3post_filtered_95ci.txt
 
 ################ FARM3 PRE 95% CI (FILTERED DATASET)
 
@@ -124,5 +124,5 @@ END {
   sd = sqrt(variance);
   ci = 1.96 * (sd / sqrt(n));
   printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
-}' f3pre_depth_updated.txt > f3pre_filtered_95ci.txt
+}' f3pre_depth_filtered.txt > f3pre_filtered_95ci.txt
 
