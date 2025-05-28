@@ -17,18 +17,18 @@
 
 ################ FARM1 AVERAGE (ENTIRE DATASET)
 
-awk '{sum += $3} END {print sum/NR}' all_farm_dapth.txt > f1post_average.txt
-awk '{sum += $3} END {print sum/NR}' all_farm_dapth.txt > f1pre_average.txt
+awk '{sum += $3} END {print sum/NR}' f1post_depth.txt > f1post_average.txt
+awk '{sum += $3} END {print sum/NR}' f1pre_depth.txt > f1pre_average.txt
 
 ################ FARM2 AVERAGE (ENTIRE DATASET)
 
-awk '{sum += $3} END {print sum/NR}' all_farm_dapth.txt > f2post_average.txt
-awk '{sum += $3} END {print sum/NR}' all_farm_dapth.txt > f2pre_average.txt
+awk '{sum += $3} END {print sum/NR}' f2post_depth.txt > f2post_average.txt
+awk '{sum += $3} END {print sum/NR}' f2pre_depth.txt > f2pre_average.txt
 
 ################ FARM3 AVERAGE (ENTIRE DATASET)
 
-awk '{sum += $3} END {print sum/NR}' all_farm_dapth.txt > f3post_average.txt
-awk '{sum += $3} END {print sum/NR}' all_farm_dapth.txt > f3pre_average.txt
+awk '{sum += $3} END {print sum/NR}' f3post_depth.txt > f3post_average.txt
+awk '{sum += $3} END {print sum/NR}' f3pre_depth.txt > f3pre_average.txt
 
 ################ FARM1 POST 95% CI (ENTIRE DATASET)
 
