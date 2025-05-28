@@ -38,7 +38,7 @@ awk 'NR==1 {$1="Sample"} {print}' OFS='\t' f1pre_depth_prefix.txt > f1pre_depth_
 awk 'NR==1 {$1="Sample"} {print}' OFS='\t' f2post_depth_prefix.txt > f2post_depth_updated.txt
 awk 'NR==1 {$1="Sample"} {print}' OFS='\t' f2pre_depth_prefix.txt > f2pre_depth_updated.txt
 awk 'NR==1 {$1="Sample"} {print}' OFS='\t' f3post_depth_prefix.txt > f3post_depth_updated.txt
-awk 'NR==1 {$1="Sample"} {print}' OFS='\t' f3re_depth_prefix.txt > f3re_depth_updated.txt
+awk 'NR==1 {$1="Sample"} {print}' OFS='\t' f3re_depth_prefix.txt > f3pre_depth_updated.txt
 
 ############# FILTER FOR CHROMOSOMES 
 
