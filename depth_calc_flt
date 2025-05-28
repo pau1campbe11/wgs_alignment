@@ -1,0 +1,128 @@
+#!/bin/bash -l
+
+################ SLURM SETTINGS ################
+#SBATCH --account=project0005             
+#SBATCH --job-name=depth_calc_filter                      
+#SBATCH --output=%x-%J.out                
+#SBATCH --error=%x-%J.err               
+#SBATCH --time=0-1:00:00               
+#SBATCH --mem=5G                         
+#SBATCH --ntasks=1                        
+#SBATCH --cpus-per-task=1                 
+#SBATCH --ntasks-per-node=1
+#SBATCH --mail-user=p.campbell.5@research.gla.ac.uk
+#SBATCH --mail-type=ALL
+
+################ SCRIPT ################
+
+################ FARM1 AVERAGE (FILTERED DATASET)
+
+awk '{sum += $3} END {print sum/NR}' f1post_depth.txt > f1post_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f1pre_depth.txt > f1pre_filtered_average.txt
+
+################ FARM2 AVERAGE (FILTERED DATASET)
+
+awk '{sum += $3} END {print sum/NR}' f2post_depth.txt > f2post_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f2pre_depth.txt > f2pre_filtered_average.txt
+
+################ FARM3 AVERAGE (FILTERED DATASET)
+
+awk '{sum += $3} END {print sum/NR}' f3post_depth.txt > f3post_filtered_average.txt
+awk '{sum += $3} END {print sum/NR}' f3pre_depth.txt > f3pre_filtered_average.txt
+
+################ FARM1 POST 95% CI (FILTERED DATASET)
+
+awk 'NR > 1 {
+  x[NR] = $3;
+  sum += $3;
+  sumsq += $3^2
+}
+END {
+  n = NR - 1;
+  mean = sum / n;
+  variance = (sumsq - sum^2/n) / (n - 1);
+  sd = sqrt(variance);
+  ci = 1.96 * (sd / sqrt(n));
+  printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
+}' f1post_depth.txt > f1post_filtered_95ci.txt
+
+################ FARM1 PRE 95% CI (FILTERED DATASET)
+
+awk 'NR > 1 {
+  x[NR] = $3;
+  sum += $3;
+  sumsq += $3^2
+}
+END {
+  n = NR - 1;
+  mean = sum / n;
+  variance = (sumsq - sum^2/n) / (n - 1);
+  sd = sqrt(variance);
+  ci = 1.96 * (sd / sqrt(n));
+  printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
+}' f1pre_depth.txt > f1pre_filtered_95ci.txt
+
+################ FARM2 POST 95% CI (FILTERED DATASET)
+
+awk 'NR > 1 {
+  x[NR] = $3;
+  sum += $3;
+  sumsq += $3^2
+}
+END {
+  n = NR - 1;
+  mean = sum / n;
+  variance = (sumsq - sum^2/n) / (n - 1);
+  sd = sqrt(variance);
+  ci = 1.96 * (sd / sqrt(n));
+  printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
+}' f2post_depth.txt > > f2post_filtered_95ci.txt
+
+################ FARM2 PRE 95% CI (FILTERED DATASET)
+
+awk 'NR > 1 {
+  x[NR] = $3;
+  sum += $3;
+  sumsq += $3^2
+}
+END {
+  n = NR - 1;
+  mean = sum / n;
+  variance = (sumsq - sum^2/n) / (n - 1);
+  sd = sqrt(variance);
+  ci = 1.96 * (sd / sqrt(n));
+  printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
+}' f2pre_depth.txt > f2pre_filtered_95ci.txt
+
+################ FARM3 POST 95% CI (FILTERED DATASET)
+
+awk 'NR > 1 {
+  x[NR] = $3;
+  sum += $3;
+  sumsq += $3^2
+}
+END {
+  n = NR - 1;
+  mean = sum / n;
+  variance = (sumsq - sum^2/n) / (n - 1);
+  sd = sqrt(variance);
+  ci = 1.96 * (sd / sqrt(n));
+  printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
+}' f3post_depth.txt > f3post_filtered_95ci.txt
+
+################ FARM3 PRE 95% CI (FILTERED DATASET)
+
+awk 'NR > 1 {
+  x[NR] = $3;
+  sum += $3;
+  sumsq += $3^2
+}
+END {
+  n = NR - 1;
+  mean = sum / n;
+  variance = (sumsq - sum^2/n) / (n - 1);
+  sd = sqrt(variance);
+  ci = 1.96 * (sd / sqrt(n));
+  printf "Mean = %.4f\n95%% CI = %.4f to %.4f\n", mean, mean - ci, mean + ci;
+}' f3pre_depth.txt > f3pre_filtered_95ci.txt
+
