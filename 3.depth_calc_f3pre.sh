@@ -20,4 +20,4 @@ conda activate samtools-1.17
 
 ############# MY CODE #############
 
-samtools depth -a  /users/2320707c/project0005/for_paul_oster/2.bwasplitter/farm_3_pretx_bwasplitter/farm_3_pretx_bwasplitter_out/farm_3_pretx.merged.sorted.marked.bam -H  -o f3pre_depth -q 30 -Q 20 -g SECONDARY,QCFAIL -G DUP -s
+samtools depth -a  /users/2320707c/project0005/for_paul_oster/2.bwasplitter/farm_3_pretx_bwasplitter/farm_3_pretx_bwasplitter_out -H  -o f3pre_depth -q 30 -Q 20 -g SECONDARY,QCFAIL -G DUP -s
