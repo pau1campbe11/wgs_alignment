@@ -17,15 +17,16 @@
 
 ################ FARM1 AVERAGE (FILTERED DATASET)
 
-awk '{sum += $3} END {print sum/NR}' f1post_depth_filtered.txt > f1post_filtered_average.txt
-awk '{sum += $3} END {print sum/NR}' f1pre_depth_filtered.txt > f1pre_filtered_average.txt
+awk 'NR > 1 {sum += $4} END {if (NR>1) print sum/(NR-1)}' f1post_depth_filtered.txt > f1post_filtered_average.txt
+
+awk 'NR > 1 {sum += $4} END {if (NR>1) print sum/(NR-1)}' f1pre_depth_filtered.txt > f1pre_filtered_average.txt
 
 ################ FARM2 AVERAGE (FILTERED DATASET)
 
-awk '{sum += $3} END {print sum/NR}' f2post_depth_filtered.txt > f2post_filtered_average.txt
-awk '{sum += $3} END {print sum/NR}' f2pre_depth_filtered.txt > f2pre_filtered_average.txt
+awk 'NR > 1 {sum += $4} END {if (NR>1) print sum/(NR-1)}' f2post_depth_filtered.txt > f2post_filtered_average.txt
+awk 'NR > 1 {sum += $4} END {if (NR>1) print sum/(NR-1)}' f2pre_depth_filtered.txt > f2pre_filtered_average.txt
 
 ################ FARM3 AVERAGE (FILTERED DATASET)
 
-awk '{sum += $3} END {print sum/NR}' f3post_depth_filtered.txt > f3post_filtered_average.txt
-awk '{sum += $3} END {print sum/NR}' f3pre_depth_filtered.txt > f3pre_filtered_average.txt
+awk 'NR > 1 {sum += $4} END {if (NR>1) print sum/(NR-1)}' f3post_depth_filtered.txt > f3post_filtered_average.txt
+awk 'NR > 1 {sum += $4} END {if (NR>1) print sum/(NR-1)}' f3pre_depth_filtered.txt > f3pre_filtered_average.txt
