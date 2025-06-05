@@ -13,74 +13,74 @@
 
 ### Code section
 
-awk '$1 == "OZ172662.1"' f1post_depth_filtered.txt > f1postchr1.txt
+awk '$2 == "OZ172662.1"' f1post_depth_filtered.txt > f1postchr1.txt
 
-awk '$1 == "OZ172663.1"' f1post_depth_filtered.txt > f1postchr2.txt
+awk '$2 == "OZ172663.1"' f1post_depth_filtered.txt > f1postchr2.txt
 
-awk '$1 == "OZ172664.1"' f1post_depth_filtered.txt > f1postchr3.txt
+awk '$2 == "OZ172664.1"' f1post_depth_filtered.txt > f1postchr3.txt
 
-awk '$1 == "OZ172665.1"' f1post_depth_filtered.txt > f1postchr4.txt
+awk '$2 == "OZ172665.1"' f1post_depth_filtered.txt > f1postchr4.txt
 
-awk '$1 == "OZ172666.1"' f1post_depth_filtered.txt > f1postchr5.txt
+awk '$2 == "OZ172666.1"' f1post_depth_filtered.txt > f1postchr5.txt
 
-awk '$1 == "OZ172667.1"' f1post_depth_filtered.txt > f1postchrx.txt
+awk '$2 == "OZ172667.1"' f1post_depth_filtered.txt > f1postchrx.txt
 
-awk '$1 == "OZ172662.1"' f1pre_depth_filtered.txt > f1prechr1.txt
+awk '$2 == "OZ172662.1"' f1pre_depth_filtered.txt > f1prechr1.txt
 
-awk '$1 == "OZ172663.1"' f1pre_depth_filtered.txt > f1prechr2.txt
+awk '$2 == "OZ172663.1"' f1pre_depth_filtered.txt > f1prechr2.txt
 
-awk '$1 == "OZ172664.1"' f1pre_depth_filtered.txt > f1prechr3.txt
+awk '$2 == "OZ172664.1"' f1pre_depth_filtered.txt > f1prechr3.txt
 
-awk '$1 == "OZ172665.1"' f1pre_depth_filtered.txt > f1prechr4.txt
+awk '$2 == "OZ172665.1"' f1pre_depth_filtered.txt > f1prechr4.txt
 
-awk '$1 == "OZ172666.1"' f1pre_depth_filtered.txt > f1prechr5.txt
+awk '$2 == "OZ172666.1"' f1pre_depth_filtered.txt > f1prechr5.txt
 
-awk '$1 == "OZ172667.1"' f1pre_depth_filtered.txt > f1prechrx.txt
+awk '$2 == "OZ172667.1"' f1pre_depth_filtered.txt > f1prechrx.txt
 
-awk '$1 == "OZ172662.1"' f2post_depth_filtered.txt > f2postchr1.txt
+awk '$2 == "OZ172662.1"' f2post_depth_filtered.txt > f2postchr1.txt
 
-awk '$1 == "OZ172663.1"' f2post_depth_filtered.txt > f2postchr2.txt
+awk '$2 == "OZ172663.1"' f2post_depth_filtered.txt > f2postchr2.txt
 
-awk '$1 == "OZ172664.1"' f2post_depth_filtered.txt > f2postchr3.txt
+awk '$2 == "OZ172664.1"' f2post_depth_filtered.txt > f2postchr3.txt
 
-awk '$1 == "OZ172665.1"' f2post_depth_filtered.txt > f2postchr4.txt
+awk '$2 == "OZ172665.1"' f2post_depth_filtered.txt > f2postchr4.txt
 
-awk '$1 == "OZ172666.1"' f2post_depth_filtered.txt > f2postchr5.txt
+awk '$2 == "OZ172666.1"' f2post_depth_filtered.txt > f2postchr5.txt
 
-awk '$1 == "OZ172667.1"' f2post_depth_filtered.txt > f2postchrx.txt
+awk '$2 == "OZ172667.1"' f2post_depth_filtered.txt > f2postchrx.txt
 
-awk '$1 == "OZ172662.1"' f2pre_depth_filtered.txt > f2prechr1.txt
+awk '$2 == "OZ172662.1"' f2pre_depth_filtered.txt > f2prechr1.txt
 
-awk '$1 == "OZ172663.1"' f2pre_depth_filtered.txt > f2prechr2.txt
+awk '$2 == "OZ172663.1"' f2pre_depth_filtered.txt > f2prechr2.txt
 
-awk '$1 == "OZ172664.1"' f2pre_depth_filtered.txt > f2prechr3.txt
+awk '$2 == "OZ172664.1"' f2pre_depth_filtered.txt > f2prechr3.txt
 
-awk '$1 == "OZ172665.1"' f2pre_depth_filtered.txt > f2prechr4.txt
+awk '$2 == "OZ172665.1"' f2pre_depth_filtered.txt > f2prechr4.txt
 
-awk '$1 == "OZ172666.1"' f2pre_depth_filtered.txt > f2prechr5.txt
+awk '$2 == "OZ172666.1"' f2pre_depth_filtered.txt > f2prechr5.txt
 
-awk '$1 == "OZ172667.1"' f2pre_depth_filtered.txt > f2prechrx.txt
+awk '$2 == "OZ172667.1"' f2pre_depth_filtered.txt > f2prechrx.txt
 
-awk '$1 == "OZ172662.1"' f3post_depth_filtered.txt > f3postchr1.txt
+awk '$2 == "OZ172662.1"' f3post_depth_filtered.txt > f3postchr1.txt
 
-awk '$1 == "OZ172663.1"' f3post_depth_filtered.txt > f3postchr2.txt
+awk '$2 == "OZ172663.1"' f3post_depth_filtered.txt > f3postchr2.txt
 
-awk '$1 == "OZ172664.1"' f3post_depth_filtered.txt > f3postchr3.txt
+awk '$2 == "OZ172664.1"' f3post_depth_filtered.txt > f3postchr3.txt
 
-awk '$1 == "OZ172665.1"' f3post_depth_filtered.txt > f3postchr4.txt
+awk '$2 == "OZ172665.1"' f3post_depth_filtered.txt > f3postchr4.txt
 
-awk '$1 == "OZ172666.1"' f3post_depth_filtered.txt > f3postchr5.txt
+awk '$2 == "OZ172666.1"' f3post_depth_filtered.txt > f3postchr5.txt
 
-awk '$1 == "OZ172667.1"' f3post_depth_filtered.txt > f3postchrx.txt
+awk '$2 == "OZ172667.1"' f3post_depth_filtered.txt > f3postchrx.txt
 
-awk '$1 == "OZ172662.1"' f3pre_depth_filtered.txt > f3prechr1.txt
+awk '$2 == "OZ172662.1"' f3pre_depth_filtered.txt > f3prechr1.txt
 
-awk '$1 == "OZ172663.1"' f3pre_depth_filtered.txt > f3prechr2.txt
+awk '$2 == "OZ172663.1"' f3pre_depth_filtered.txt > f3prechr2.txt
 
-awk '$1 == "OZ172664.1"' f3pre_depth_filtered.txt > f3prechr3.txt
+awk '$2 == "OZ172664.1"' f3pre_depth_filtered.txt > f3prechr3.txt
 
-awk '$1 == "OZ172665.1"' f3pre_depth_filtered.txt > f3prechr4.txt
+awk '$2 == "OZ172665.1"' f3pre_depth_filtered.txt > f3prechr4.txt
 
-awk '$1 == "OZ172666.1"' f3pre_depth_filtered.txt > f3prechr5.txt
+awk '$2 == "OZ172666.1"' f3pre_depth_filtered.txt > f3prechr5.txt
 
-awk '$1 == "OZ172667.1"' f3pre_depth_filtered.txt > f3prechrx.txt
+awk '$2 == "OZ172667.1"' f3pre_depth_filtered.txt > f3prechrx.txt
