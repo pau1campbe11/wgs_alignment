@@ -18,6 +18,7 @@
 ############# ADD HEADER
 
 awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f1post_depth > f1post_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f1post_depth > f1post_depth_header.txt
 awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f1pre_depth > f1pre_depth_header.txt
 awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f2post_depth > f2post_depth_header.txt
 awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f2pre_depth > f2pre_depth_header.txt
