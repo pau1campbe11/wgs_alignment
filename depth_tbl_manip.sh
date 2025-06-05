@@ -15,12 +15,12 @@
 
 ############# ADD HEADER
 
-(echo -e "Chrom\tPosition\tDepth"; cat f1post_depth.txt) > f1post_depth_header.txt
-(echo -e "Chrom\tPosition\tDepth"; cat f1pre_depth.txt) > f1pre_depth_header.txt
-(echo -e "Chrom\tPosition\tDepth"; cat f2post_depth.txt) > f2post_depth_header.txt
-(echo -e "Chrom\tPosition\tDepth"; cat f2pre_depth.txt) > f2pre_depth_header.txt
-(echo -e "Chrom\tPosition\tDepth"; cat f3post_depth.txt) > f3post_depth_header.txt
-(echo -e "Chrom\tPosition\tDepth"; cat f3pre_depth.txt) > f3pre_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f1post_depth.txt > f1post_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f1pre_depth.txt > f1pre_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f2post_depth.txt > f2post_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f2pre_depth.txt > f2pre_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f3post_depth.txt > f3post_depth_header.txt
+awk 'NR==1 {print "Chromosome\tPosition\tCoverage"; next} 1' f3pre_depth.txt > f3pre_depth_header.txt
 
 ############# ADD SAMPLE NAME AND COLUMN 
 
