@@ -73,14 +73,14 @@ awk '$1 == "OZ172666.1"' f3post_depth_filtered.txt > f3postchr5.txt
 
 awk '$1 == "OZ172667.1"' f3post_depth_filtered.txt > f3postchrx.txt
 
-awk '$1 == "OZ172662.1"' f3post_depth_filtered.txt > f3prechr1.txt
+awk '$1 == "OZ172662.1"' f3pre_depth_filtered.txt > f3prechr1.txt
 
-awk '$1 == "OZ172663.1"' f3post_depth_filtered.txt > f3prechr2.txt
+awk '$1 == "OZ172663.1"' f3pre_depth_filtered.txt > f3prechr2.txt
 
-awk '$1 == "OZ172664.1"' f3post_depth_filtered.txt > f3prechr3.txt
+awk '$1 == "OZ172664.1"' f3pre_depth_filtered.txt > f3prechr3.txt
 
-awk '$1 == "OZ172665.1"' f3post_depth_filtered.txt > f3prechr4.txt
+awk '$1 == "OZ172665.1"' f3pre_depth_filtered.txt > f3prechr4.txt
 
-awk '$1 == "OZ172666.1"' f3post_depth_filtered.txt > f3prechr5.txt
+awk '$1 == "OZ172666.1"' f3pre_depth_filtered.txt > f3prechr5.txt
 
-awk '$1 == "OZ172667.1"' f3post_depth_filtered.txt > f3prechrx.txt
+awk '$1 == "OZ172667.1"' f3pre_depth_filtered.txt > f3prechrx.txt
